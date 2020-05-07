@@ -1,21 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-// import zhuce from '@/xm/zhuce'
+import register from '@/views/ZM/register'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    // {
-    //   path: '/zhuce',
-    //   name: 'zhuce',
-    //   component: zhuce
-    // }
+     {
+       path: '/register',
+       name: 'register',
+       component: register
+     }
   ]
 })

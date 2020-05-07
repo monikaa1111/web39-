@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import denglu from '@/views/denglu'
+import denglu from '@/views/BQ/denglu'
 
 Vue.use(Router)
 

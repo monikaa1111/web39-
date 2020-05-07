@@ -7,7 +7,7 @@
         <input type="text" class="d2 d3" placeholder="您的密码">
         <p class="d4">没有账号？快速注册</p>
         <p class="d5">找回密码</p>
-        <input type="button" class="d5" value="登录">
+        <input type="button" class="d6" value="登录">
     </div>
 </template>
 <script>
@@ -55,11 +55,12 @@ export default {
     top: 64%;
     left: 72%;
 }
-.d5{
-    width: 300px;
+.d6{
+    width: 280px;
     height: 40px;
     position: absolute;
     top: 78%;
-    left: 19%;
+    left: 21%;
+    cursor: pointer;
     }
 </style>

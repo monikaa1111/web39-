@@ -1,7 +1,7 @@
 <template>
     <div id="box">
         <div class="top">
-            <h3>注册页面</h3>
+            <h3>注册页</h3>
         </div>
     </div>
 </template>

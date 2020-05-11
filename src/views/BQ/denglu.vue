@@ -1,65 +1,132 @@
+
 <template>
-    <div class="box1">
-        <div>
+<div>
+  <top></top>
+<div class="box1">
+    <div>
             <h2 class="d1">登录</h2>
         </div>
-        <input type="text" class="d2" placeholder="您的邮箱">
-        <input type="text" class="d2 d3" placeholder="您的密码">
-        <p class="d4">没有账号？快速注册</p>
-        <p class="d5">找回密码</p>
-        <input type="button" class="d5" value="登录">
+    <div class="box2">
+        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" >
+         
+        <el-form-item label="邮箱" prop="checkPass" >
+            <el-input type="text" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="pass">
+            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        </el-form-item> 
+        <font class="font">没有账号？<a href="">极速注册</a></font>
+        <font class="font1"><a href="denglu">忘记密码</a></font>
+        <el-form-item>
+            <el-button type="primary" @click="submitForm('ruleForm')" class="submit">登录</el-button>
+        </el-form-item>
+        </el-form>
+       
+    </div>
+    </div>
     </div>
 </template>
 <script>
+import top from '@/components/top'
 export default {
-    
-}
+    components:{
+      top,
+    },
+    data() {
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        } else {
+          if (this.ruleForm.checkPass !== '') {
+            this.$refs.ruleForm.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+      var validatePass2 = (rule, value, callback) => {
+        console.log(value)
+        var zz=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (value === '') {
+          callback(new Error('请输入邮箱'));
+        }else if(!zz.test(value)){
+         
+          this.ruleForm.checkPass='';
+          callback();
+        }
+    };
+      return {
+        ruleForm: {
+          pass: '',
+          checkPass: '',
+        },
+        rules: {
+          pass: [
+            { validator: validatePass, trigger: 'blur' }
+          ],
+          checkPass: [
+            { validator: validatePass2, trigger: 'blur' }
+          ],
+        }
+      };
+    },
+    methods: {
+      
+      submitForm(formName) {
+          if (this.ruleForm.pass!=''&&this.ruleForm.checkPass!='') {
+              this.$axios.post('/BQ/login',{
+              email:this.ruleForm.checkPass,
+              password:this.ruleForm.pass
+          }).then(res=>{
+            console.log(res);
+          })
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+      },
+    }
+  }
 </script>
 <style scoped>
 .box1{
     width: 500px;
     height: 300px;
     border: 1px solid black;
-    margin: 140px auto;
+    margin: 120px auto;
     position: relative;
     top: 0%;
     left: 0;
 }
+.box2{
+     width: 400px;
+    height: 300px;
+    margin: 30px auto;
+    position: relative;
+    top: 0%;
+    left: -8%;
+}
 .d1{
     text-align: center;
+    margin-top: 14px;
 }
-.d2{
-    width: 360px;
+.submit{
+    width: 240px;
     height: 40px;
-    border-radius: 5px;
-    border:1px solid black;
-    position: absolute;
-    top: 26%;
-    left: 13%;
-    text-indent:1em
-}
-.d3{
+    cursor: pointer;
      position: absolute;
-    top: 50%;
-    left: 13%;
-}
-.d4{
-    font-size: 14px;
-    position: absolute;
-    top: 64%;
-    left: 13%;
-}
-.d5{
-    font-size: 14px;
-    position: absolute;
-    top: 64%;
-    left: 72%;
-}
-.d5{
-    width: 300px;
-    height: 40px;
-    position: absolute;
-    top: 78%;
-    left: 19%;
+    left: 7%;
+    margin-top:8%; 
+    }
+.font{
+      font-size: 12px;
+      position: absolute;
+      top: 40%;
+      left: 25%;
+    }
+    .font1{
+      font-size: 12px;
+      position: absolute;
+      top: 40%;
+      left: 87%;
     }
 </style>

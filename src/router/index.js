@@ -9,11 +9,7 @@ import zhuye from '@/views/BQ/zhuye'
 
 Vue.use(Router)
 
-<<<<<<< HEAD
 export default new Router({ 
-=======
-export default new Router({
->>>>>>> 7680e6929c1eff095398543a2d7c075d6fe214d2
   mode:"history",
   routes: [
     {

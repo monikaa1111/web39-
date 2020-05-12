@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import denglu from '@/views/BQ/denglu'
 import register from '@/views/ZM/register'
-import denglu from '@/views/BQ/denglu'
 import top from '@/components/top'
 import zhuye from '@/views/BQ/zhuye'
 

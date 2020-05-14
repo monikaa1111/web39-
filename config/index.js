@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/wyz':{
+        target:'http://192.168.1.100:9999/',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/wyz':'http://192.168.1.100:9999/'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

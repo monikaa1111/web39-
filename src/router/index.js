@@ -7,10 +7,21 @@ import need from '@/views/WYZ/need'
 import need1 from '@/views/WYZ/need1'
 import upup from '@/views/WYZ/upup'
 import information from '@/views/WYZ/information'
+
+import denglu from '@/views/BQ/denglu'
+import register from '@/views/ZM/register'
+import top from '@/components/top'
+import zhuye from '@/views/BQ/zhuye'
+import youxiu from '@/views/BQ/youxiu'
+import xqxqy from '@/views/BQ/xqxqy'
+// import wodexiangmu from '@/views/BQ/wodexiangmu'
+// import work from '@/views/BQ/work'
+// import daiban from '@/views/BQ/daiban'
+
 Vue.use(Router)
 
-export default new Router({
-  mode:'history',
+export default new Router({ 
+  mode:"history",
   routes: [
     {
       path: '/',
@@ -42,10 +53,50 @@ export default new Router({
       name: 'information',
       component: information
     },
+     {
+       path: '/register',
+       name: 'register',
+       component: register
+     },
+     {
+      path: '/denglu',
+      name: 'denglu',
+      component:denglu
+    },
+    {
+      path: '/top',
+      name: 'top',
+      component:top
+    },
+    {
+      path: '/zhuye',
+      name: 'zhuye',
+      component:zhuye
+    },
+    {
+      path: '/youxiu',
+      name: 'youxiu',
+      component:youxiu
+    },
+    {
+      path: '/xqxqy',
+      name: 'xqxqy',
+      component:xqxqy
+    },
     // {
-    //   path: '/zhuce',
-    //   name: 'zhuce',
-    //   component: zhuce
-    // }
+    //   path: '/wodexiangmu',
+    //   name: 'wodexiangmu',
+    //   component:wodexiangmu
+    // },
+    // {
+    //   path: '/work',
+    //   name: 'work',
+    //   component:work
+    // },
+    // {
+    //   path: '/daiban',
+    //   name: 'daiban',
+    //   component:daiban
+    // },
   ]
 })

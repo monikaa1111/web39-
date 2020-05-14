@@ -7,6 +7,11 @@ import ElementUI from 'element-ui'
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
 import 'element-ui/lib/theme-chalk/index.css'
+import Axios from'axios'
+import VueAxios from 'vue-axios'
+Vue.prototype.$axios=Axios
+
+Vue.use(Axios,VueAxios)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios=Axios

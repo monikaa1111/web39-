@@ -4,10 +4,12 @@ import HelloWorld from '@/components/HelloWorld'
 import denglu from '@/views/BQ/denglu'
 import register from '@/views/ZM/register'
 import cxy from '@/views/ZM/cxy'
+import top from '@/components/top'
+import zhuye from '@/views/BQ/zhuye'
 
 Vue.use(Router)
 
-export default new Router({
+export default new Router({ 
   mode:"history",
   routes: [
     {
@@ -24,6 +26,21 @@ export default new Router({
       path: '/cxy',
       name: 'cxy',
       component: cxy
+     },
+     {
+      path: '/denglu',
+      name: 'denglu',
+      component:denglu
+    },
+    {
+      path: '/top',
+      name: 'top',
+      component:top
+    },
+    {
+      path: '/zhuye',
+      name: 'zhuye',
+      component:zhuye
     }
   ]
 })

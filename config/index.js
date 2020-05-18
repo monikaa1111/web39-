@@ -11,12 +11,19 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/zm':{
-        target:'http://192.168.1.108:8000',
+      '/BQ':{
+        target:'http://192.168.1.108:8000/',
         changeOrigin:true,
         pathRewrite:{
-          '^/zm':'http://192.168.1.108:8000'
-        }
+          '^/BQ':'http://192.168.1.108:8000/'
+        },
+      },
+      '/zm':{
+        target:'http://192.168.31.254:9999/',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/zm':'http://192.168.31.254:9999/'
+        },
       }
     },
 

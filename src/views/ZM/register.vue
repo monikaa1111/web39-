@@ -72,26 +72,26 @@
     methods: {
       // 验证码接口
       getyzm(){
-        this.$axios.post('/zm/sendEmail',{
-          email:this.ruleForm.email
+        this.$axios.post('/zm/verification/code',{
+         user_email:this.ruleForm.email
         }).then(res=>{
           console.log(res);
         })
       },
-      // 登录接口
+      // 注册接口
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate((valid) => {    
           if (valid) {
             this.$axios.post('/zm/register',{
-              email:this.ruleForm.email,
-              code:this.ruleForm.yzm,
-              password:this.ruleForm.pass,
-              username:this.ruleForm.username
+              user_email:this.ruleForm.email,
+              verificationCode:this.ruleForm.yzm,
+              user_password:this.ruleForm.pass,
+              user_name:this.ruleForm.username
             }).then(res=>{
               console.log(res);
             })
           } else {
-            console.log('error submit!!');
+            alert('error submit!!');
             return false;
           }
         });

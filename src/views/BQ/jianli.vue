@@ -142,7 +142,7 @@
             </el-form-item>
             <div class="aaaa9">
               <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')" class="ap">立即创建</el-button>
+                <el-button type="primary" @click="submitForm('ruleForm')" class="ap">提交</el-button>
               </el-form-item>
             </div>
         </div>

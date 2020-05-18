@@ -11,13 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/BQ':{
-      //   target:'http://192.168.31.254:8000/',
-      //   changeOrigin:true,
-      //   pathRewrite:{
-      //     '^/BQ':'http://192.168.1.108:8000/'
-      //   }
-      // },
       '/wyz':{
         target:'http://192.168.1.100:9999/',
         changeOrigin:true,

@@ -62,6 +62,52 @@
           </div>
         </div>
         <div>
+            <p class="d" style="margin-top:20px;">优秀程序员推荐</p>
+              <div class="y">
+                <div class="y1">
+                  <h2>Top1:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top2:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top3:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top4:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top5:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top6:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top7:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+                <div class="y1">
+                  <h2>Top8:</h2>
+                  <div class="y11"></div>
+                  <p></p>
+                </div>
+              </div>
+            
+        </div>
+        <div>
           <p class="d" style="margin-top:20px;">交易与服务流程</p>
           <div class="fw">
             <div class="fw1">
@@ -105,6 +151,20 @@
               <p class="fw13 ff1">保障运营无忧。</p>
             </div>
           </div>
+        </div>
+        <div class="ee">
+          <div class="ee1">
+            <h3 class="ee11">337,597,822</h3>
+            <h4 class="ee22">累计总金额</h4>
+          </div>
+           <div class="ee1">
+             <h3 class="ee11">11,826</h3>
+             <h4 class="ee22">项目数量</h4>
+           </div>
+            <div class="ee1">
+               <h3 class="ee11">170,408</h3>
+               <h4 class="ee22">注册开发者</h4>
+            </div>
         </div>
     </div>
 
@@ -188,7 +248,7 @@ img{
   .a1{
     width: 380px;
     height: 540px;
-    box-shadow: 2px 2px darkgrey;
+    box-shadow: 2px 2px rgb(153, 151, 151);
     float: left;
     margin-left: 14px ;
     position: relative;
@@ -275,7 +335,7 @@ img{
    }
    .fw{
      width: 1250px;
-     height: 1500px;
+     height: 1600px;
      margin: 10px auto; 
      
     
@@ -283,7 +343,7 @@ img{
    .fw1{
      width: 1250px;
      height: 300px;
-     box-shadow: 1px 1px 1px 1px darkgrey;
+     box-shadow: 1px 1px 1px 1px rgb(151, 149, 149);
      margin: 10px 0;
      float: left;
       position: relative;
@@ -304,13 +364,13 @@ img{
      left: 50%;
    }
    .fw12{
-     font-size: 28px;
+     font-size: 30px;
       position: absolute;
      top: 26%;
      left: 20%;
    }
    .fw13{
-     font-size: 14px;
+     font-size: 16px;
      color: #979FA8;
       position: absolute;
      top: 40%;
@@ -331,5 +391,50 @@ img{
       position: absolute;
      top: 66%;
      left: 20%;
+   }
+   .ee{
+     width: 1200px;
+     height: 100px;
+     margin: 20px auto;
+   }
+   .ee1{
+     width: 360px;
+     height: 100px;
+     float: left;
+     margin-left: 30px ;
+   }
+   .ee11{
+     font-size: 32px;
+     text-align: center;
+     color:#1E1E1E;
+     margin-top:10px; 
+   }
+   .ee22{
+     text-align: center;
+     color: #1E1E1E;
+     margin-top:10px;
+   }
+   .y{
+     width: 1210px;
+     height: 500px;
+     margin: 26px auto;
+   }
+   .y1{
+     width: 300px;
+     height: 250px;
+     border: 1px solid black;
+     float: left;
+     position: relative;
+     top: 0%;
+     left: 0%;
+   }
+   .y11{
+     width: 100px;
+     height: 100px;
+     border: 1px solid black;
+     border-radius: 50%;
+     position: absolute;
+     top: 16%;
+     left: 33%;
    }
 </style>

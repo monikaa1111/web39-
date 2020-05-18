@@ -18,7 +18,7 @@
         <font class="font">没有账号？<a href="register">极速注册</a></font>
         <font class="font1"><a href="denglu">忘记密码</a></font>
         <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')" class="submit">登录</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')" class="submit"><a href="zhuye">登录</a></el-button>
         </el-form-item>
         </el-form>
        

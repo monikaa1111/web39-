@@ -8,7 +8,7 @@ import zhuye from '@/views/BQ/zhuye'
 import youxiu from '@/views/BQ/youxiu'
 import xqxqy from '@/views/BQ/xqxqy'
 // import wodexiangmu from '@/views/BQ/wodexiangmu'
-// import work from '@/views/BQ/work'
+import jianli from '@/views/BQ/jianli'
 // import daiban from '@/views/BQ/daiban'
 
 Vue.use(Router)
@@ -51,11 +51,11 @@ export default new Router({
       name: 'xqxqy',
       component:xqxqy
     },
-    // {
-    //   path: '/wodexiangmu',
-    //   name: 'wodexiangmu',
-    //   component:wodexiangmu
-    // },
+    {
+      path: '/jianli',
+      name: 'jianli',
+      component:jianli
+    },
     // {
     //   path: '/work',
     //   name: 'work',

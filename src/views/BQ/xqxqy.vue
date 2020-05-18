@@ -18,7 +18,7 @@
                  <el-input 
                 type="textarea"
                 placeholder="请输入内容"
-                v-model="jianjie">
+                v-model="jianjie1">
                 </el-input>
                  <p>{{xiangmuwendang1}}</p>
                 
@@ -39,7 +39,8 @@ export default {
             id:"项目名称",
             leixing:"其他",
             jinge:"290",
-            jianjie:"fcdfrgvfcrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+            jianjie:"",
+            jianjie1:"",
             xiangmuwendang:'',
         }
 

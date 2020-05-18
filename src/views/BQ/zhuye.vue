@@ -11,7 +11,7 @@
             <p class="d1">提供您所需的全套软件开发服务</p>
             <el-row class="d2"> 
             <el-button type="primary" class="d3">发布您的需求</el-button>
-            <el-button  class="d3">查看项目列表</el-button>
+            <a href="jianli"><el-button  class="d3">申请签约接单</el-button></a>
             </el-row>
         </div>
         <div>
@@ -64,48 +64,18 @@
         <div>
             <p class="d" style="margin-top:20px;">优秀程序员推荐</p>
               <div class="y">
-                <div class="y1">
-                  <h2>Top1:</h2>
-                  <div class="y11"></div>
+                <div class="y1" v-for="(item,index) in message " :key="index" @click="jump(index)" >
+                  <img :src="top[index]" class="yyy">
+                  <!-- <div class="y11">{{item.user_avatar}}</div> -->
+                   <img :src="item.user_avatar" class="y11">
+                   <div class="y12">
+                     <p class="y13">{{item.user_name}}</p>
+                  <p class="y14">{{item.user_role}}</p>
+                   <p class="y14">{{item.user_email}}</p>
                   <p></p>
                 </div>
-                <div class="y1">
-                  <h2>Top2:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top3:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top4:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top5:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top6:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top7:</h2>
-                  <div class="y11"></div>
-                  <p></p>
-                </div>
-                <div class="y1">
-                  <h2>Top8:</h2>
-                  <div class="y11"></div>
-                  <p></p>
                 </div>
               </div>
-            
         </div>
         <div>
           <p class="d" style="margin-top:20px;">交易与服务流程</p>
@@ -173,18 +143,44 @@
 <script>
    import top from '@/components/top'
     export default {
+      components:{
+      top,
+    },
         data(){
             return{
               list:[
                 require("../.././assets/11.png"),
-                require("../.././assets/opp.png")
+                require("../.././assets/opp.png"),
+                require("../.././assets/timg22.png")
+              ],
+              top:[
+                require("../.././assets/qq.png"),
+                require("../.././assets/qqq.png"),
+                require("../.././assets/qqqq.png"),
+                require("../.././assets/qqqqq.png"),
+                require("../.././assets/5.png"),
+                 require("../.././assets/6.png"),
+                  require("../.././assets/7.png"),
+                   require("../.././assets/8.png"),
+
+              ],
+              message:[
+                
               ]
             }
-
         },
-    components:{
-      top,
-    },
+        created(){
+          this.$axios.post('/BQ/excellent').then(res=>{
+            console.log(res)
+            this.message=res.data.data.showExcellent
+          })
+        },
+            methods: {
+              jump(aa){
+                this.$router.push("/youxiu?info="+this.message[aa].user_email);
+              }
+            }
+    
 }
 </script>
 
@@ -343,7 +339,7 @@ img{
    .fw1{
      width: 1250px;
      height: 300px;
-     box-shadow: 1px 1px 1px 1px rgb(151, 149, 149);
+     box-shadow: 1px 1px 1px 1px rgb(207, 198, 198);
      margin: 10px 0;
      float: left;
       position: relative;
@@ -417,12 +413,14 @@ img{
    .y{
      width: 1210px;
      height: 500px;
-     margin: 26px auto;
+     margin: 26px auto; 
+     /* border: 1px solid black; */
+     box-shadow: 1px 1px 1px 1px rgb(212, 202, 202);
    }
    .y1{
      width: 300px;
      height: 250px;
-     border: 1px solid black;
+    
      float: left;
      position: relative;
      top: 0%;
@@ -431,10 +429,35 @@ img{
    .y11{
      width: 100px;
      height: 100px;
-     border: 1px solid black;
+     /* border: 1px solid black; */
      border-radius: 50%;
      position: absolute;
      top: 16%;
      left: 33%;
+   }
+   .y12{
+     width: 300px;
+     height: 100px;
+     position: absolute;
+     top: 60%;
+     left: 0%;
+   }
+   .y13{
+     font-weight: bold;
+     text-align:center;
+     font-size: 20px;
+     margin-top:5px;
+   }
+   .y14{
+     margin-top:5px;
+      text-align:center;
+     font-size: 16px;
+   }
+   .yyy{
+     width: 40px;
+     height: 40px;
+     /* border: 1px solid black; */
+     margin-left: 20px;
+     margin-top: 20px;
    }
 </style>

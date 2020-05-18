@@ -18,6 +18,13 @@ module.exports = {
       //     '^/BQ':'http://192.168.1.108:8000/'
       //   }
       // },
+      '/wyz':{
+        target:'http://192.168.1.100:9999/',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/wyz':'http://192.168.1.100:9999/'
+        }
+          },
       '/BQ':{
         target:'http://192.168.31.254:9999/',
         changeOrigin:true,
@@ -26,7 +33,6 @@ module.exports = {
         }
       }
     },
-
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

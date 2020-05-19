@@ -10,7 +10,7 @@
             <h2 class="d">程序员客栈</h2>
             <p class="d1">提供您所需的全套软件开发服务</p>
             <el-row class="d2"> 
-            <el-button type="primary" class="d3">发布您的需求</el-button>
+            <el-button type="primary" class="d3" @click="sdssd">发布您的需求</el-button>
             <a href="jianli"><el-button  class="d3">申请签约接单</el-button></a>
             </el-row>
         </div>
@@ -176,6 +176,9 @@
           })
         },
             methods: {
+                 sdssd(){
+        this.$router.push("/need");
+      },
               jump(aa){
                 this.$router.push("/youxiu?info="+this.message[aa].user_email);
               }

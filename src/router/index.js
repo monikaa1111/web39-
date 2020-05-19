@@ -15,6 +15,7 @@ import top from '@/components/top'
 import zhuye from '@/views/BQ/zhuye'
 import youxiu from '@/views/BQ/youxiu'
 import xqxqy from '@/views/BQ/xqxqy'
+import dibu from '@/components/dibu'
 // import wodexiangmu from '@/views/BQ/wodexiangmu'
 // import work from '@/views/BQ/work'
 // import daiban from '@/views/BQ/daiban'
@@ -88,6 +89,11 @@ export default new Router({
       path: '/xqxqy',
       name: 'xqxqy',
       component:xqxqy
+    },
+    {
+      path: '/dibu',
+      name: 'dibu',
+      component:dibu
     },
     // {
     //   path: '/wodexiangmu',

@@ -19,11 +19,11 @@ module.exports = {
         }
           },
       '/BQ':{
-        target:'http://192.168.1.108:8000/',
+        target:'http://192.168.31.254:9999/',
         changeOrigin:true,
         pathRewrite:{
-          '^/BQ':'http://192.168.1.108:8000/'
-        },
+          '^/BQ':'http://192.168.31.254:9999/'
+        }
       },
       '/zm':{
         target:'http://192.168.31.254:9999/',

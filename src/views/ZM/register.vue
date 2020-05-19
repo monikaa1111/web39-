@@ -1,35 +1,39 @@
 <template>
     <div id="box">
+      <top></top>
+      <div class="box">
         <h2>注册账号</h2>
-       <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="70px" class="demo-ruleForm">
-          <el-form-item label="邮箱" prop="email">
-            <el-input v-model="ruleForm.email"></el-input>
-          </el-form-item>
-          <el-form-item label="验证码">
-             <el-input placeholder="请输入验证码" v-model="ruleForm.yzm" class="input-with-select">
-               <el-button slot="append" @click="getyzm">获取验证码</el-button>
-            </el-input>
-          </el-form-item>
-          <el-form-item label="用户" prop="username">
-            <el-input v-model="ruleForm.username"></el-input>
-          </el-form-item>
-          <el-form-item label="密码" prop="pass">
-            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="确认密码" prop="checkPass">
-            <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-          </el-form-item>
-         
-          <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
-          </el-form-item>
-        </el-form>
-        
+        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="70px" class="demo-ruleForm">
+            <el-form-item label="邮箱" prop="email">
+              <el-input v-model="ruleForm.email"></el-input>
+            </el-form-item>
+            <el-form-item label="验证码">
+              <el-input placeholder="请输入验证码" v-model="ruleForm.yzm" class="input-with-select">
+                <el-button slot="append" @click="getyzm">获取验证码</el-button>
+              </el-input>
+            </el-form-item>
+            <el-form-item label="用户" prop="username">
+              <el-input v-model="ruleForm.username"></el-input>
+            </el-form-item>
+            <el-form-item label="密码" prop="pass">
+              <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="确认密码" prop="checkPass">
+              <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+            </el-form-item>
+          
+            <el-form-item>
+              <el-button type="primary" @click="submitForm('ruleForm')">注册</el-button>
+              <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+          </el-form>
+        </div>
     </div>
 </template>
 
 <script>
+import top from '../../components/top'
+
     export default {
     data() {
       var validatePass = (rule, value, callback) => {
@@ -69,6 +73,9 @@
         }
       };
     },
+    components:{
+      top
+    },
     methods: {
       // 验证码接口
       getyzm(){
@@ -104,13 +111,13 @@
 </script>
 
 <style scoped>
-#box{
+.box{
     width: 350px;
     height: 524px;
     /* border: 1px solid black; */
     margin: 70px auto;
 }
-#box h2{
+.box h2{
     text-align: center;
     padding: 30px 0px;
 }

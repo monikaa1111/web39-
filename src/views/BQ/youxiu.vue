@@ -4,9 +4,9 @@
     <div class="yx1">
         <div class="yx2">
             <div class="kuang1">
-            <div class="yx21"></div>
-            <p class="yx22"></p>
-            <input type="button" class="yx23" value="自由工作者"> 
+             <el-avatar :src="user.user_avatar" class="yx21"></el-avatar>
+            <p class="yx22">{{user.user_name}}</p>
+            <input type="button" class="yx23"  :inputv="message.prog_job_status"> 
             <div class="block" >
             <el-rate
                 v-model="value2"
@@ -15,9 +15,9 @@
             </div>
             </div>
             <div class="yx25">
-                <p class="yx251">800元/天</p>
-                <p class="yx252">可工作地点: 深圳远程</p>
-                 <p class="yx253">可工作时间: 工作日9:00-18:00、周末10:00-18:00</p>
+                <p class="yx251">{{message.prog_wage_day}}/天</p>
+                <p class="yx252">可工作地点:{{message.prog_area}}</p>
+                 <p class="yx253">可工作时间:{{message.prog_hours}}</p>
                  <el-row>
                 <el-button type="primary" class="yx254">按天预约</el-button>
                 <el-button class="yx255">按月雇佣(荐)</el-button>
@@ -46,8 +46,22 @@ import top from '@/components/top'
                 return {
                 value1: null,
                 value2: null,
-                colors: ['#99A9BF', '#F7BA2A', '#FF9900'] 
+                colors: ['#99A9BF', '#F7BA2A', '#FF9900'], 
+                message:"",
+                Aemail:"",
+                user:"",
             }
+        },
+        created(){
+            this.Aemail=this.$route.query.info;
+            console.log(this.Aemail);
+            this.$axios.post("BQ/programmer/detailed/message",{user_email:this.Aemail})
+            .then(res=>{
+                console.log(res)
+                this.message=res.data.data.programmer
+                this.user=res.data.data.user
+
+            })
         },
          components:{
       top,
@@ -90,15 +104,18 @@ import top from '@/components/top'
     border: 1px solid black;
     border-radius: 50%;
     margin: 30px auto;
+         position:absolute;
+    top: 1%;
+    left: 37%;
 
 }
 .yx22{
-    width: 200px;
+    width: 60px;
     height: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
      position:absolute;
     top: 25%;
-    left: 25%;
+    left: 45%;
 }
 .yx23{
     width: 80px;

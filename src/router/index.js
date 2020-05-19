@@ -17,7 +17,7 @@ import youxiu from '@/views/BQ/youxiu'
 import xqxqy from '@/views/BQ/xqxqy'
 import dibu from '@/components/dibu'
 // import wodexiangmu from '@/views/BQ/wodexiangmu'
-// import work from '@/views/BQ/work'
+import jianli from '@/views/BQ/jianli'
 // import daiban from '@/views/BQ/daiban'
 
 Vue.use(Router)

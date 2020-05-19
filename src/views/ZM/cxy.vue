@@ -1,5 +1,6 @@
 <template>
     <div id="box">
+        <top></top>
         <div class="top">
             <div class="top_right">平台程序员兼职</div>
             <p>共有<span style="float:none"> 43241 </span>位兼职程序员符合条件</p>
@@ -163,6 +164,7 @@
 </template>
 <script>
 import bottom from '../../components/dibu'
+import top from '../../components/top'
     export default {
     data() {
       return {
@@ -170,8 +172,9 @@ import bottom from '../../components/dibu'
       }
     },
     components:{
-        bottom
-    }
+        bottom,
+        top
+    },
   }
 </script>
 

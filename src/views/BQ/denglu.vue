@@ -16,7 +16,7 @@
             <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
         </el-form-item> 
         <font class="font">没有账号？<a href="register">极速注册</a></font>
-        <font class="font1"><a href="denglu">忘记密码</a></font>
+        <font class="font1" @click="ass">忘记密码</font>
         <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')" class="submit">登录</el-button>
         </el-form-item>
@@ -70,6 +70,9 @@ export default {
       };
     },
     methods: {
+      ass(){
+        this.$router.push("/forget");
+      },
       
       submitForm(formName) {
           if (this.ruleForm.pass!=''&&this.ruleForm.checkPass!='') {

@@ -10,6 +10,7 @@ import information from '@/views/WYZ/information'
 
 import denglu from '@/views/BQ/denglu'
 import register from '@/views/ZM/register'
+import cxy from '@/views/ZM/cxy'
 import top from '@/components/top'
 import zhuye from '@/views/BQ/zhuye'
 import youxiu from '@/views/BQ/youxiu'
@@ -57,6 +58,11 @@ export default new Router({
        path: '/register',
        name: 'register',
        component: register
+     },
+     {
+      path: '/cxy',
+      name: 'cxy',
+      component: cxy
      },
      {
       path: '/denglu',

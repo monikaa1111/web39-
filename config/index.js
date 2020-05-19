@@ -24,6 +24,13 @@ module.exports = {
         pathRewrite:{
           '^/BQ':'http://192.168.31.254:9999/'
         }
+      },
+      '/zm':{
+        target:'http://192.168.31.254:9999/',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/zm':'http://192.168.31.254:9999/'
+        },
       }
     },
     // Various Dev Server settings
